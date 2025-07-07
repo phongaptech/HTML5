@@ -1,34 +1,3 @@
-function checkNumber(num) {
-  return new Promise(function(resolve, reject) {
-    if (num % 2 === 0) {
-      resolve("Số " + num + " là số chẵn!");
-    } else {
-      reject("Lỗi: Số " + num + " là số lẻ!");
-    }
-  });
-}
-
-function handleCheck() {
-  const input = document.getElementById("numberInput").value;
-  const num = parseInt(input);
-  const result = document.getElementById("result");
-
-  result.textContent = "Đang kiểm tra...";
-
-  checkNumber(num)
-    .then(function(message) {
-      result.textContent = message;
-      result.style.color = "green";
-    })
-    .catch(function(error) {
-      result.textContent = error;
-      result.style.color = "red";
-    })
-    .finally(function() {
-      console.log("Đã hoàn tất kiểm tra.");
-    });
-}
-
 // function sayHello() {
 //     alert("Hello");
 // }
@@ -92,10 +61,10 @@ function handleCheck() {
 // } while()
 
 // Bài tập 1 - Viết hàm ẩn danh: Tạo một biến hello, gán cho nó một hàm ẩn danh in ra "Xin chào học viên!". Gọi hàm 2 lần
-// const hello = function () {
-//     console.log("Xin chào học viên!");
-// }; 
-// hello();
+const hello = function () {
+    console.log("Xin chào học viên!");
+}; 
+hello();
 // Bài tập 2 - Viết arrow function: Viết arrow function nhanDoi(x) trả về giá trị x * 2. Viêt arrow function kiemTraChanLe(n) trả về chuỗi "Chẵn" hoặc "Lẻ"
 // const nhanDoi = x => x * 2;
 // console.log(nhanDoi(2));
