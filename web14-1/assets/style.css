@@ -1,0 +1,9 @@
+.done {
+    text-decoration: line-through;
+}
+li {
+    cursor: pointer;
+}
+li:hover {
+    background-color: yellow;
+}
