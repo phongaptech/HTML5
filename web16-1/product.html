@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="product.html">Quản lý sản phẩm</a>
+        <a href="category.html">Quản lý danh mục</a>
+    </div>
+    <h1>Quản lý sản phẩm</h1>
+    <div class="container">
+        <div>
+            <h2>Thêm sửa sản phẩm</h2>
+            <form>
+                <div>
+                    <label for="productName">Tên sản phẩm</label>
+                    <input type="text" id="productName" maxlength="255">
+                </div>
+                <div>
+                    <label for="productPrice">Giá</label>
+                    <input type="number" id="productPrice" >
+                </div>
+                <div>
+                    <label for="productCategory">Danh mục</label>
+                    <select id="productCategory">
+                        <option value="my_pham">Mỹ phẩm</option>
+                        <option value="dien_tu">Điện tử</option>
+                        <option value="thoi_trang">Thời trang</option>
+                        <option value="trang_suc">Trang sức</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="productDescription">Mô tả</label>
+                    <textarea id="productDescription" maxlength="500"></textarea>
+                </div>
+                <button type="submit" id="submitProductBtn">Thêm sản phẩm</button>
+                <button>Xóa</button>
+            </form>
+        </div>
+        <div>
+            <h2>Danh sách sản phẩm</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Danh mục</th>
+                        <th>Mô tả</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>

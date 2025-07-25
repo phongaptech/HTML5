@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="category.html">Thêm danh mục</a>
+    </div>
+    <h2>Thêm sản phẩm</h2>
+    <form id="productForm">
+        <input type="text" id="pname" placeholder="Tên sản phẩm" maxlength="255" required>
+        <input type="number" id="pprice" placeholder="Giá" min="0" required>
+        <select id="pcategory" required></select>
+        <textarea id="pdesc" placeholder="Mô tả" maxlength="500"></textarea>
+        <button type="submit">Thêm sản phẩm</button>
+    </form>
+    <h2>Danh sách sản phẩm</h2>
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Danh mục</th>
+                <th>Mô tả</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

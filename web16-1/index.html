@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; text-align: center; }
+        h1 { margin-bottom: 30px; }
+        .nav-links a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chào mừng đến với Hệ thống Quản lý</h1>
+    <div class="nav-links">
+        <a href="product.html">Quản lý Sản phẩm</a>
+        <a href="category.html">Quản lý Danh mục</a>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { display: flex; gap: 40px; }
+        .section { flex: 1; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+        form div { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        textarea { resize: vertical; min-height: 80px; }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover { background-color: #0056b3; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: #f2f2f2; }
+        .actions button {
+            background-color: #ffc107;
+            margin-right: 5px;
+            padding: 6px 10px;
+            font-size: 0.9em;
+        }
+        .actions button.delete { background-color: #dc3545; }
+        .actions button:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <h1>Quản lý Sản phẩm</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Thêm/Sửa Sản phẩm</h2>
+            <form id="productForm">
+                <div>
+                    <label for="productName">Tên sản phẩm:</label>
+                    <input type="text" id="productName" maxlength="255" required>
+                </div>
+                <div>
+                    <label for="productPrice">Giá:</label>
+                    <input type="number" id="productPrice" min="0" step="0.01" required>
+                </div>
+                <div>
+                    <label for="productCategory">Danh mục:</label>
+                    <select id="productCategory" required>
+                        <option value="">-- Chọn danh mục --</option>
+                        <option value="my_pham">Mỹ phẩm</option>
+                        <option value="dien_tu">Điện tử</option>
+                        <option value="thoi_trang">Thời trang</option>
+                        <option value="trang_suc">Trang sức</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="productDescription">Mô tả:</label>
+                    <textarea id="productDescription" maxlength="500"></textarea>
+                </div>
+                <button type="submit" id="submitProductBtn">Thêm Sản phẩm</button>
+                <button type="button" id="cancelEditBtn" style="display:none; background-color: #6c757d;">Hủy</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Danh sách Sản phẩm</h2>
+            <table id="productListTable">
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Danh mục</th>
+                        <th>Mô tả</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="product.js"></script> </body>
+</html>     <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Danh mục</title>
+    <link rel="stylesheet" href="common.css"> </head>
+<body>
+    <h1>Quản lý Danh mục</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Thêm/Sửa Danh mục</h2>
+            <form id="categoryForm">
+                <div>
+                    <label for="categoryName">Tên danh mục:</label>
+                    <input type="text" id="categoryName" maxlength="255" required>
+                </div>
+                <div>
+                    <label for="categoryQuantity">Số lượng:</label>
+                    <input type="number" id="categoryQuantity" min="0" value="0" required>
+                </div>
+                <button type="submit" id="submitCategoryBtn">Thêm Danh mục</button>
+                <button type="button" id="cancelEditBtn" style="display:none; background-color: #6c757d;">Hủy</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Danh sách Danh mục</h2>
+            <table id="categoryListTable">
+                <thead>
+                    <tr>
+                        <th>Tên danh mục</th>
+                        <th>Số lượng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script> </body>
+</html>
